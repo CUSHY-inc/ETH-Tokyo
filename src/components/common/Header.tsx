@@ -1,10 +1,10 @@
-import HamburgerButton from "./HumbergurButton";
+import { Bars3Icon } from '@heroicons/react/24/outline';
 
 const Header = () => {
   return (
-    <div className="w-full h-20 bg-base-300 flex items-center">
+    <div className="w-full h-20 bg-base-300 flex items-center justify-between">
       <div className="ml-4">
-        <HamburgerButton h={'h-1'} w={'w-8'} mb={'mb-1'} />
+        <Bars3Icon className="h-10 w-10" />
       </div>
     </div>
   );
