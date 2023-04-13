@@ -4,6 +4,7 @@ import Title from '../../components/matching/Title';
 import { Provider } from 'react-redux';
 import store from '../../store';
 import Describe from '../../components/matching/Describe';
+import Footer from '../../components/common/Footer';
 
 export default function Home() {
 
@@ -23,6 +24,11 @@ export default function Home() {
             <Describe />
         </div>
       </main>
+      <footer>
+        <div className='mt-16'>
+          <Footer />
+        </div>
+      </footer>
     </Provider>
   );
 

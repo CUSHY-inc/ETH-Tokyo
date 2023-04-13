@@ -7,7 +7,7 @@ const Describe = () => {
 
     return (
         <div className="flex flex-col justify-center items-center">
-            <div className="relative z-10">
+            <div className="z-10">
                 <Avatar image={image} />
             </div>
             <div className="relative -top-4 rounded-lg w-90 bg-gray-200">
