@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import reducer from "./modules/addr";
+import addr from "./modules/addr";
+import nfts from "./modules/nfts";
 
 export default configureStore({
     reducer: {
-        addr: reducer
-    },
+        addr: addr,
+        nfts: nfts
+    }
 });

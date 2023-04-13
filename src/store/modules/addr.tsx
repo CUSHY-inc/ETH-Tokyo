@@ -1,9 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import exp from "constants";
 
 const addr = createSlice({
     name: "addr",
-    initialState: '0x0000000',
+    initialState: '',
     reducers: {
         setAddr(state, { type, payload }) {
             return payload;
@@ -11,7 +10,5 @@ const addr = createSlice({
     }
 });
 
-const { setAddr } = addr.actions;
-
-export { setAddr };
+export const { setAddr } = addr.actions;
 export default addr.reducer;
