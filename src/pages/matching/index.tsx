@@ -5,9 +5,12 @@ import { Provider, useSelector } from 'react-redux';
 import store from '../../store';
 import Describe from '../../components/matching/Describe';
 import Footer from '../../components/common/Footer';
-import { RootState } from '@/src/store';
+import Property from '../../components/matching/Property';
 
 export default function Home() {
+
+  const attribute = 'Career'
+  const items = ['Community moderator'];
 
   return (
     <Provider store={store}>
@@ -22,7 +25,10 @@ export default function Home() {
           <Title />
         </div>
         <div className='pt-8'>
-            <Describe />
+          <Describe />
+        </div>
+        <div className='mt-3 ml-8'>
+          <Property attribute={attribute} items={items} />
         </div>
       </main>
       <footer>
