@@ -7,10 +7,10 @@ const Describe = () => {
 
     return (
         <div className="flex flex-col justify-center items-center">
-            <div className="z-10">
+            <div className="-z-10">
                 <Avatar image={image} />
             </div>
-            <div className="relative -top-4 rounded-lg w-90 bg-gray-200">
+            <div className="relative -top-4 rounded-lg w-90 -z-20 bg-gray-200">
                 <div className="py-6 px-6">
                 <p className="whitespace-pre-wrap text-center flex flex-col justify-center items-center">{`${desc}`}</p>
                 </div>
