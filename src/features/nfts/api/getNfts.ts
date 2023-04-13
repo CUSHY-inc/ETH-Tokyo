@@ -1,6 +1,6 @@
 import { Nfts } from "@/src/store/modules/nfts";
 
-const getNfts = async (addr: string, chain: string) => {
+const getNfts = async (addr: string, chain: string): Promise<Nfts[] | undefined> => {
 
     let nfts: Nfts[] = [];
     let res;
@@ -30,11 +30,11 @@ const getNfts = async (addr: string, chain: string) => {
     .catch(err => console.error(err));
 
     if (res) {
-        for (let i = 0; i < res.totalCount; i++) {
+        for (let i = 0; i < res!.totalCount; i++) {
             const nft: Nfts = {
-                contractAddr: res.ownedNfts[i].contract.address,
-                title: res.ownedNfts[i].title,
-                image: getImage(res.ownedNfts[i].metadata.image),
+                contractAddr: res!.ownedNfts[i].contract.address,
+                title: res!.ownedNfts[i].title,
+                image: getImage(res!.ownedNfts[i].metadata.image),
             }
             nfts.push(nft);
         }
@@ -42,7 +42,7 @@ const getNfts = async (addr: string, chain: string) => {
     return nfts;
 }
 
-const getImage = (uri: string) => {
+const getImage = (uri: string): string => {
     let img;
     var pattern = 'ipfs';
     if (!uri.indexOf(pattern)) {

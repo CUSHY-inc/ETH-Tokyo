@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import Header from '../../components/common/Header'
 import Title from '../../components/matching/Title';
-import { Provider } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 import store from '../../store';
 import Describe from '../../components/matching/Describe';
 import Footer from '../../components/common/Footer';
+import { RootState } from '@/src/store';
 
 export default function Home() {
 

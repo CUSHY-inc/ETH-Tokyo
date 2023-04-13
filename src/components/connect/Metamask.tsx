@@ -5,19 +5,18 @@ import { useEffect } from 'react';
 import { useAccount, useNetwork } from 'wagmi';
 import { useRouter } from 'next/router';
 import { fetchNfts } from '@/src/store/modules/nfts';
+import { AppDispatch } from '@/src/store';
 
 const Metamask = () => {
 
   const router = useRouter();
   const { isConnected, address } = useAccount();
   const { chain } = useNetwork();
-  const dispatch = useDispatch();
-  const nfts = useSelector(state => state.nfts);
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     if (isConnected) {
-      dispatch(fetchNfts({addr: address, chain: chain!.name}));
-      console.log(nfts);
+      dispatch(fetchNfts({addr: address!, chain: chain!.name}));
       router.push('/matching');
     }
   }, [isConnected]);
