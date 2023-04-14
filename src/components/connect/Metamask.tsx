@@ -34,13 +34,6 @@ const Metamask = () => {
     }
   }, [account]);
 
-  // useEffect(() => {
-  //   if (isConnected) {
-  //     dispatch(fetchNfts({addr: address!, chain: chain!.name}));
-  //     router.push('/matching');
-  //   }
-  // }, [isConnected]);
-
   return (
       <div className='flex flex-col items-center w-fit'>
         <button onClick={connect} className="bg-orange-200 rounded-full w-20 h-20 flex justify-center items-center" >
