@@ -1,21 +1,22 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Image from 'next/image';
-import { useDispatch } from 'react-redux';
-import { setAddr } from '../../store/modules/addr';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { useAccount } from 'wagmi';
+import { useAccount, useNetwork } from 'wagmi';
 import { useRouter } from 'next/router';
+import { fetchNfts } from '@/src/store/modules/nfts';
+import { AppDispatch } from '@/src/store';
 
 const Metamask = () => {
 
   const router = useRouter();
   const { isConnected, address } = useAccount();
-
-  const dispatch = useDispatch();
+  const { chain } = useNetwork();
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     if (isConnected) {
-      dispatch(setAddr(address));
+      dispatch(fetchNfts({addr: address!, chain: chain!.name}));
       router.push('/matching');
     }
   }, [isConnected]);

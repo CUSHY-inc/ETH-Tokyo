@@ -1,8 +1,20 @@
 import { configureStore } from "@reduxjs/toolkit";
-import reducer from "./modules/addr";
+import addrReducer from "./modules/addr";
+import nftsReducer from "./modules/nfts";
+import { Nfts } from "./modules/nfts";
 
-export default configureStore({
+export interface RootState {
+    addr: string;
+    nfts: Nfts[];
+}
+
+export const store = configureStore({
     reducer: {
-        addr: reducer
-    },
+        addr: addrReducer,
+        nfts: nftsReducer
+    }
 });
+
+export type AppDispatch = typeof store.dispatch;
+
+export default store;
