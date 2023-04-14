@@ -6,8 +6,10 @@ import Title from '../components/connect/Title';
 import { Provider } from 'react-redux';
 import store from '../store';
 import Footer from '../components/common/Footer';
+import MetaMaskSDK from '@metamask/sdk';
 
 export default function Home() {
+
   return (
     <Provider store={store}>
       <Head>
