@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import Describe from "./Describe";
+import Describe2 from "./Describe2";
 
 // const Person = () => {
 //     const [currentProfile, setCurrentProfile] = useState(0);
@@ -84,7 +85,7 @@ const Person = ({ evaluate = true }) => {
     return (
         <div>
             <div className="border border-gray-300 rounded-xl p-8 w-80">
-                <Describe />
+                <Describe2 />
             </div>
 
             {evaluate &&

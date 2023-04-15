@@ -31,7 +31,7 @@ const Metamask = () => {
     console.log(account);
     if (account.isConnect) {
       // localStorage.setItem("account", JSON.stringify(account));
-      router.push('/link');
+      router.push('/profile');
     }
   }, [account]);
 

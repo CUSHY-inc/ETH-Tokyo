@@ -26,10 +26,10 @@ export default function Profile() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
-        <Header />
+        <Header enable={false} />
       </header>
       <main>
-        <div className='mt-8 flex justify-center items-center'>
+        <div className='mt-24 flex justify-center items-center'>
           <Explain />
         </div>
         <div className='mt-16 flex justify-evenly'>
@@ -40,15 +40,10 @@ export default function Profile() {
             <Lens />
           </div>
         </div>
-        <div className='mt-40 flex justify-evenly'>
+        <div className='mt-40 flex justify-evenly fixed bottom-10 w-full'>
           <NextButton onclick={next} />
         </div>
       </main>
-      <footer>
-        <div className='mt-16'>
-          <Footer />
-        </div>
-      </footer>
     </Provider>
   );
 }

@@ -20,10 +20,10 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <header>
-          <Header />
+          <Header enable={false} />
         </header>
         <main>
-          <div className='mt-16 flex justify-center items-center'>
+          <div className='mt-24 flex justify-center items-center'>
             <Title />
           </div>
           <div className='mt-16 flex justify-evenly'>
@@ -32,11 +32,6 @@ export default function Home() {
             </div>
           </div>
         </main>
-        <footer>
-          <div className='mt-16'>
-            <Footer />
-          </div>
-        </footer>
       </PersistGate>
     </Provider>
   );

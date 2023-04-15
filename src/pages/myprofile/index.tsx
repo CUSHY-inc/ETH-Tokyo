@@ -9,7 +9,6 @@ import Property from '../../components/matching/Property';
 import Person from '@/src/components/matching/Person';
 import { useEffect } from 'react';
 import { RootState } from '../../store';
-import Person2 from '@/src/components/matching/Person2';
 
 export default function Home() {
 
@@ -23,7 +22,7 @@ export default function Home() {
       <Header />
       <main>
         <div className='flex justify-center mt-24'>
-          <Person2 />
+          <Person evaluate={false} />
         </div>
       </main>
       <footer>
