@@ -8,6 +8,7 @@ import { fetchNfts } from '@/src/store/modules/nfts';
 import { AppDispatch } from '@/src/store';
 import { setAccount, Account } from '@/src/store/modules/account';
 import { RootState } from '@/src/store';
+import MetaMaskSDK from '@metamask/sdk';
 
 const Metamask = () => {
 
@@ -16,23 +17,30 @@ const Metamask = () => {
   const { chain } = useNetwork();
   const dispatch = useDispatch<AppDispatch>();
   const account = useSelector((state: RootState) => state.account);
+  const nfts = useSelector((state: RootState) => state.nfts);
+  const options = {
+    injectProvider: false,
+    communicationLayerPreference: 'webrtc',
+  };
+  const MMSDK = new MetaMaskSDK(options);
+  const ethereum = MMSDK.getProvider();
 
   const connect = async () => {
-    const accounts = await window.ethereum!.request({
-      method: "eth_requestAccounts",
-    });
+    const accounts = ethereum.request({ method: 'eth_requestAccounts', params: [] });
     if (accounts.length > 0) {
-      const action = setAccount({addr: accounts[0], isConnect: true});
-      dispatch(action);
+      const accountAction = setAccount({addr: accounts[0], isConnect: true});
+      dispatch(accountAction);
     }
+    dispatch(fetchNfts({addr: accounts[0], chain: 'Ethereum'}));
+    router.push('/link');
   }
 
   useEffect(() => {
-    console.log(account);
-    if (account.isConnect) {
-      // localStorage.setItem("account", JSON.stringify(account));
-      router.push('/profile');
-    }
+    // console.log(account);
+    // if (account.isConnect) {
+    //   // localStorage.setItem("account", JSON.stringify(account));
+    //   router.push('/link');
+    // }
   }, [account]);
 
   return (

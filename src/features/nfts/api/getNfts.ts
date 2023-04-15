@@ -3,42 +3,48 @@ import { Nfts } from "@/src/store/modules/nfts";
 const getNfts = async (addr: string, chain: string): Promise<Nfts[] | undefined> => {
 
     let nfts: Nfts[] = [];
-    let res;
-    const reqOptions: RequestInit = {
-        method: 'GET',
-        redirect: 'follow',
+    let res: any;
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    
+    var raw = JSON.stringify({
+      "id": 1,
+      "jsonrpc": "2.0",
+      "method": "qn_fetchNFTs",
+      "params": [{
+        "wallet": "0xb399C7BB2349D545C8d4CFCF927876eACaC8B979",
+        "page": 1,
+        "perPage": 10,
+      }]
+    });
+    
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
     };
-
-    switch (chain) {
-        case 'Ethereum':
-            chain = 'mainnet';
-            break;
-        case 'Goerli':
-            chain = 'goerli';
-            break;
-        default:
-            return;
-    }
-
-    const apiKey = process.env.ALCHEMY_ID;
-    const baseURL = `https://eth-${chain}.g.alchemy.com/nft/v2/${apiKey}/getNFTs/`;
-    const fetchURL = `${baseURL}?owner=${addr}`;
-
-    await fetch(fetchURL, reqOptions)
-    .then(response => response.json())
-    .then(response => res = response)
-    .catch(err => console.error(err));
+    
+    await fetch("https://burned-light-gas.discover.quiknode.pro/c187749a56d0dcc62b48d6fdc73a7dca48081cc2/", requestOptions)
+      .then(response => response.text())
+      .then(result => res = JSON.parse(result))
+      .catch(error => console.log('error', error));
 
     if (res) {
-        for (let i = 0; i < res!.totalCount; i++) {
-            const nft: Nfts = {
-                contractAddr: res!.ownedNfts[i].contract.address,
-                title: res!.ownedNfts[i].title,
-                image: getImage(res!.ownedNfts[i].metadata.image),
+        const assets = res.result.assets;
+        if (assets.length > 0) {
+            for (let i = 0; i < assets.length; i++) {
+                const nft: Nfts = {
+                    contractAddr: assets[i].collectionAddress,
+                    title: assets[i].name,
+                    image: assets[i].imageUrl,
+                }
+                nfts.push(nft);
             }
-            nfts.push(nft);
         }
     }
+
     return nfts;
 }
 

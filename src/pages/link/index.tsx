@@ -10,6 +10,10 @@ import Explain from '../../components/link/Explain';
 import { RootState, store } from '../../store';
 import NextButton from '@/src/components/link/NextButton';
 import { useRouter } from 'next/router';
+import getNfts from '@/src/features/nfts/api/getNfts';
+import { fetchNfts } from '@/src/store/modules/nfts';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '@/src/store';
 
 export default function Profile() {
 
