@@ -30,7 +30,7 @@ const Metamask = () => {
   useEffect(() => {
     console.log(account);
     if (account.isConnect) {
-      router.push('/matching');
+      router.push('/link');
     }
   }, [account]);
 
