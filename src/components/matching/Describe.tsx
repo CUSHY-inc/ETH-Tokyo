@@ -22,7 +22,7 @@ const Describe = () => {
         <div>
             <div className="flex flex-col justify-center items-center">
                 <div className="-z-10">
-                    <Avatar image={image} ringOffset='ring-offset-0' w='w-16' />
+                    <Avatar image={image} ringOffset='ring-offset-0' w='w-16' h='h-16' />
                 </div>
                 <div className="mt-4">
                     <Name />

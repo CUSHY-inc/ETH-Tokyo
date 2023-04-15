@@ -5,7 +5,7 @@ import Avatar from "./Avatar";
 
 const Footer = () => {
 
-    const image = "/images/metamask.png"
+    const image = "/images/forerigner.webp"
 
     return (
         <div className="w-full h-20 bg-sky-900 flex items-center justify-center space-x-10">
