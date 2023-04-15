@@ -19,7 +19,7 @@ export default function Chat() {
     if (response.ok) {
       const responseData = await response.json();
       console.log(responseData.data.meetingLink);
-      
+      window.open(responseData.data.meetingLink, '_blank')
     } else {
       console.error('Failed to fetch data')
     }
