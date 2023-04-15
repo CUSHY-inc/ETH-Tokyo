@@ -16,23 +16,26 @@ const Metamask = () => {
   const { chain } = useNetwork();
   const dispatch = useDispatch<AppDispatch>();
   const account = useSelector((state: RootState) => state.account);
+  const nfts = useSelector((state: RootState) => state.nfts);
 
   const connect = async () => {
     const accounts = await window.ethereum!.request({
       method: "eth_requestAccounts",
     });
     if (accounts.length > 0) {
-      const action = setAccount({addr: accounts[0], isConnect: true});
-      dispatch(action);
+      const accountAction = setAccount({addr: accounts[0], isConnect: true});
+      dispatch(accountAction);
     }
+    dispatch(fetchNfts({addr: accounts[0], chain: 'Ethereum'}));
+    router.push('/link');
   }
 
   useEffect(() => {
-    console.log(account);
-    if (account.isConnect) {
-      // localStorage.setItem("account", JSON.stringify(account));
-      router.push('/link');
-    }
+    // console.log(account);
+    // if (account.isConnect) {
+    //   // localStorage.setItem("account", JSON.stringify(account));
+    //   router.push('/link');
+    // }
   }, [account]);
 
   return (
