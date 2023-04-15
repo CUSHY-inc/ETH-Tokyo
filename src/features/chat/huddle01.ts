@@ -4,7 +4,8 @@ const postData = async () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': 'VwTZ4AGTxme9snANex9tep3NwvVMGfYd'
+        'x-api-key': 'VwTZ4AGTxme9snANex9tep3NwvVMGfYd',
+        'Access-Control-Allow-Origin': 'https://0xbagel.com'
       },
       body: JSON.stringify({ title: 'NetworX' })
     });
