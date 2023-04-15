@@ -29,7 +29,7 @@ const PersonMatch = () => {
                     <Avatar image={image} ringOffset='ring-offset-0' w='w-24' h='h-24' />
                 </div>
                 <div className="mt-2">
-                    <p>Hibiki Sato</p>
+                    <p>hbk310.eth</p>
                 </div>
                 <div className="mt-4">
                     <p>{`${desc}`}</p>

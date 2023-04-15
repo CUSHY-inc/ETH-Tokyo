@@ -33,21 +33,21 @@ const Page = () => {
                 </div>
                 <div className='flex-col items-center justify-center mt-16 ml-8'>
                     <button onClick={groupHuddle} className='text-left'>
-                        <GroupList image={image1} name='Sophia Williams + 3' explain="Hello everyone! I'm thrilled ..." date='Mar 1' />
+                        <GroupList image={image1} name='hbk310.eth + 3' explain="Hello everyone! I'm thrilled ..." date='Mar 1' />
                     </button>
                     <div className='mt-8'>
                         <button onClick={groupHuddle} className='text-left'>
-                            <GroupList image={image2} name='Ryo Uemura + 3' explain='This group is intended for ...' date='Mar 1' />
+                            <GroupList image={image2} name='ruemura3.eth + 3' explain='This group is intended for ...' date='Mar 1' />
                         </button>
                     </div>
                     <div className='mt-8'>
                         <button onClick={groupHuddle} className='text-left'>
-                            <GroupList image={image3} name='Emily Johnson + 3' explain='🤝 To ensure a positive and ...' date='Mar 1' />
+                            <GroupList image={image3} name='Ryo.take + 3' explain='🤝 To ensure a positive and ...' date='Mar 1' />
                         </button>
                     </div>
                     <div className='mt-8'>
                         <button onClick={groupHuddle} className='text-left'>
-                            <GroupList image={image4} name='Hibiki Sato + 3' explain='As a group, we will be meeting ...' date='Mar 1' />
+                            <GroupList image={image4} name='winny-jack07 + 3' explain='As a group, we will be meeting ...' date='Mar 1' />
                         </button>
                     </div>
                 </div>
