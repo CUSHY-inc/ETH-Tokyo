@@ -23,7 +23,7 @@ const Describe = () => {
         <div>
             <div className="border-b border-gray-300 pb-4">
                 <div className="flex flex-col justify-center items-center">
-                    <div className="-z-10">
+                    <div className="-z-0">
                         <Avatar image={image} ringOffset='ring-offset-0' w='w-16' h='h-16' />
                     </div>
                     <div className="mt-4">

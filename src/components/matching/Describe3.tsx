@@ -6,7 +6,7 @@ import Property from "./Property";
 
 const Describe = () => {
 
-    const desc = "As a strategic thinker with a talent for turning complex challenges into actionable plans, I am confident in my ability to drive growth and deliver results in any business setting. With a deep understanding of industry trends and a commitment to excellence, I am always looking for new opportunities to innovate and succeed."
+    const desc = "As a strategic thinker with a talent for turning complex challenges into actionable plans, I am confident in my ability to drive growth and deliver results in any business setting."
     const image = "/images/Avatar man2.png"
 
     const attribute1 = 'Career';
@@ -23,7 +23,7 @@ const Describe = () => {
         <div>
             <div className="border-b border-gray-300 pb-4">
                 <div className="flex flex-col justify-center items-center">
-                    <div className="-z-10">
+                    <div className="-z-0">
                         <Avatar image={image} ringOffset='ring-offset-0' w='w-16' h='h-16' />
                     </div>
                     <div className="mt-4">

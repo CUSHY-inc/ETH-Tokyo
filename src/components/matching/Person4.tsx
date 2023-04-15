@@ -84,7 +84,7 @@ const Person = ({ evaluate = true }) => {
 
     return (
         <div>
-            <div className="border border-gray-300 rounded-xl p-8 w-80">
+            <div className="border border-gray-300 rounded-xl p-8 w-80 bg-white">
                 <Describe4 />
             </div>
 
