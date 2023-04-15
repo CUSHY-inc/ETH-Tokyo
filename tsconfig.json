@@ -18,6 +18,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/features/profile/litApi.js", "src/components/profile/UploadInput.tsx"],
   "exclude": ["node_modules"]
 }
