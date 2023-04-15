@@ -12,8 +12,13 @@ import TextInput from '@/src/components/profile/TextInput';
 import SubmitButton from '@/src/components/common/SubmitButton';
 import Detail from '@/src/components/profile/Detail';
 import UploadInput from '@/src/components/profile/UploadInput';
+import { useRouter } from 'next/router';
 
 export default function Profile() {
+  const router = useRouter();
+    const next = () => {
+        router.push('/link');
+    }
 
     return (
       <Provider store={store}>
@@ -23,10 +28,10 @@ export default function Profile() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <header>
-          <Header />
+          <Header enable={false} />
         </header>
         <main>
-          <div className='mt-8 flex justify-center items-center'>
+          <div className='mt-24 flex justify-center items-center'>
             <Title />
           </div>
           <div className='mt-8 flex justify-center'>
@@ -46,15 +51,10 @@ export default function Profile() {
           <div className='mt-8 flex justify-center'>
               <UploadInput placeholder='Upload your resume' />
           </div>
-          <div className='mt-8 flex justify-evenly'>
-              <SubmitButton name='Save profile' w='w-64' color='btn-primary' />
+          <div className='mt-8 flex justify-evenly  fixed bottom-10 w-full'>
+              <SubmitButton name='Save profile' w='w-64' color='btn-primary' onclick={next}/>
           </div>
         </main>
-        <footer>
-          <div className='mt-16'>
-            <Footer />
-          </div>
-        </footer>
       </Provider>
     );
   }

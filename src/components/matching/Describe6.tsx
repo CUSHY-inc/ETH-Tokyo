@@ -2,17 +2,17 @@ import { RootState } from '@/src/store';
 import { useEffect } from "react";
 import { useSelector } from 'react-redux';
 import Avatar from "../common/Avatar";
-import Property from './Property';
+import Property from "./Property";
 
 const Describe = () => {
 
-    const desc = "Co-founder of Apple Inc., NeXT, and Pixar Animation Studios. Passionate about technology, design, and innovation. Changing the world, one device at a time."
-    const image = "/images/forerigner.webp"
+    const desc = "As a seasoned entrepreneur with a strong background in finance, I have a proven track record of building successful companies from the ground up. My passion for innovation and commitment to excellence have driven me to achieve remarkable results in the competitive world of business."
+    const image = "/images/Avatar woman2.png"
 
     const attribute1 = 'Career';
-    const items1 = ['Community moderator'];
+    const items1 = ['Finance Professional'];
     const attribute2 = 'Interest';
-    const items2 = ['Find Co-founder', 'Sales'];
+    const items2 = ['Negotiation', 'Execution'];
 
     const nfts = useSelector((state: RootState) => state.nfts);
 
@@ -28,7 +28,7 @@ const Describe = () => {
                     </div>
                     <div className="mt-4">
                         <div className='flex flex-col items-center w-fit'>
-                            <p className="text-1xl font-semibold">Ryounosuke Takeuchi</p>
+                            <p className="text-1xl font-semibold">Sophia Williams</p>
                         </div>
                     </div>
                     <div className="mt-4">

@@ -5,25 +5,9 @@ import Chatmate from '../../components/chat/Chatmate';
 import Footer from '../../components/common/Footer';
 import Header from '../../components/common/Header';
 import store from '../../store';
+import postData from '@/src/features/chat/huddle01';
 
 export default function Chat() {
-  const postData = async () => {
-    const response = await fetch('https://iriko.testing.huddle01.com/api/v1/create-iframe-room', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': 'VwTZ4AGTxme9snANex9tep3NwvVMGfYd'
-      },
-      body: JSON.stringify({ title: 'NetworX' })
-    });
-    if (response.ok) {
-      const responseData = await response.json();
-      console.log(responseData.data.meetingLink);
-      window.open(responseData.data.meetingLink, '_blank')
-    } else {
-      console.error('Failed to fetch data')
-    }
-  }
   return (
     <Provider store={store}>
       <Head>
@@ -35,11 +19,12 @@ export default function Chat() {
         <Header />
       </header>
       <main>
-        <div className='mt-8 flex justify-center items-center'>
-          <Chatmate />
+        <div className='flex-col items-center justify-center mt-20 ml-4'>
+          <Chatmate image='/images/Avatar man1.png' name='Hibiki Sato' date='Mar 1' />
         </div>
-        <div className='mt-40 flex justify-evenly'>
-          <SubmitButton name='Start Huddle' w='w-64' color='blue' border='none' onclick={
+        <hr className='mt-4'/>
+        <div className='mt-16 flex justify-evenly'>
+          <SubmitButton name='Start Huddle01' w='w-64' color='btn-primary' border='none' onclick={
             postData
           } />
         </div>

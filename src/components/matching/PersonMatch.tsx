@@ -2,7 +2,6 @@ import Describe from "./Describe";
 import Property from "./Property";
 import { HandThumbUpIcon, HandThumbDownIcon } from "@heroicons/react/24/solid";
 import React, { useState, useEffect } from "react";
-import { Transition } from "@headlessui/react";
 import Avatar from "../common/Avatar";
 import { RootState } from '@/src/store';
 import { useDispatch, useSelector } from 'react-redux';

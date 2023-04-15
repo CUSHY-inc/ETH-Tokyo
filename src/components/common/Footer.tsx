@@ -1,18 +1,47 @@
-import { HomeIcon } from "@heroicons/react/24/solid";
-import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/solid";
-import { UserGroupIcon } from "@heroicons/react/24/solid";
+import { ChatBubbleOvalLeftEllipsisIcon, HomeIcon, UserGroupIcon } from "@heroicons/react/24/solid";
+import { useRouter } from "next/router";
 import Avatar from "./Avatar";
 
 const Footer = () => {
 
     const image = "/images/forerigner.webp"
+    const router = useRouter();
+    const home = () => {
+        router.push('/choosing');
+    }
+    const chat = () => {
+        router.push('/chatList');
+    }
+    const group = () => {
+        router.push('/groupMatching');
+    }
+    const profile = () => {
+        router.push('/myprofile');
+    }
 
     return (
-        <div className="w-full h-20 bg-sky-900 flex items-center justify-center space-x-10">
-            <HomeIcon className="w-10 text-slate-50" />
-            <ChatBubbleOvalLeftEllipsisIcon className="w-10 text-slate-50" />
-            <UserGroupIcon className="w-10 text-slate-50" />
+        <div className="w-full h-20 bg-white flex items-center justify-center space-x-14 fixed bottom-0 border-t">
+            <div className="w-10 text-black text-center">
+                <button onClick={home}>
+                    <HomeIcon width={32} className="mx-auto" />
+                    <div className="text-xs">Home</div>
+                </button>
+            </div>
+            <div className="w-10 text-black">
+                <button onClick={chat}>
+                    <ChatBubbleOvalLeftEllipsisIcon width={32} className="mx-auto" />
+                    <div className="text-center text-xs">Chat</div>
+                </button>
+            </div>
+            <div className="w-10 text-black">
+                <button onClick={group}>
+                    <UserGroupIcon width={32} className="mx-auto" />
+                    <div className="text-center text-xs">Group match</div>
+                </button>
+            </div>
+            <button onClick={profile}>
             <Avatar image={image} ringOffset='ring-offset-1' />
+            </button>
         </div>
     );
 }

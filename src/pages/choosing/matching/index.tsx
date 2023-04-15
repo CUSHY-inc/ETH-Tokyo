@@ -21,7 +21,7 @@ export default function Home() {
         </Head>
         <Header />
         <main>
-            <div className='flex justify-center mt-8'>
+            <div className='flex justify-center mt-24'>
                 <PersonMatch />
             </div>
             <div className='mt-8 flex justify-evenly'>
