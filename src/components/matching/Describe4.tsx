@@ -28,7 +28,7 @@ const Describe = () => {
                     </div>
                     <div className="mt-4">
                         <div className='flex flex-col items-center w-fit'>
-                            <p className="text-1xl font-semibold">Ryo Uemura</p>
+                            <p className="text-1xl font-semibold">ruemura3</p>
                         </div>
                     </div>
                     <div className="mt-4">

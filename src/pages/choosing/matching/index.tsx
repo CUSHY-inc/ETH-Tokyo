@@ -9,8 +9,13 @@ import Property from '../../../components/matching/Property';
 import PersonMatch from '@/src/components/matching/PersonMatch';
 import { RootState } from '../../../store';
 import SubmitButton from '@/src/components/common/SubmitButton';
+import Router from 'next/router';
 
 export default function Home() {
+
+    const clickHandler = () => {
+        Router.push('/chatList');
+    }
 
     return (
         <Provider store={store}>
@@ -25,7 +30,7 @@ export default function Home() {
                 <PersonMatch />
             </div>
             <div className='mt-8 flex justify-evenly'>
-              <SubmitButton name='Start Chat' w='w-64' color='btn-primary' />
+              <SubmitButton onclick={clickHandler} name='Start Chat' w='w-64' color='btn-primary' />
           </div>
         </main>
         <footer>

@@ -27,21 +27,21 @@ const Page = () => {
                 </div>
                 <div className='flex-col items-center justify-center mt-12 ml-8'>
                     <button onClick={chat} className='text-left'>
-                        <ChatList image='/images/Avatar man1.png' name='Hibiki Sato' explain='Hi, Ryounosuke😃' date='Apr 16' />
+                        <ChatList image='/images/Avatar man1.png' name='hbk310.eth' explain='Hi, Ryounosuke😃' date='Apr 16' />
                     </button>
                     <div className='mt-8'>
                         <button onClick={chat} className='text-left'>
-                            <ChatList image='/images/Avatar man4.png' name='AJ Hewitt' explain='🤝 Ryounosuke, please meet ...' date='Apr 14' />
+                            <ChatList image='/images/Avatar man4.png' name='Ryo.take' explain='🤝 Ryounosuke, please meet ...' date='Apr 14' />
                         </button>
                     </div>
                     <div className='mt-8'>
                         <button onClick={chat} className='text-left'>
-                            <ChatList image='/images//Avatar woman1.png' name='Emily Johnson' explain='Hey!' date='Apr 14' />
+                            <ChatList image='/images//Avatar woman1.png' name='ruemura3' explain='Hey!' date='Apr 14' />
                         </button>
                     </div>
                     <div className='mt-8'>
                         <button onClick={chat} className='text-left'>
-                            <ChatList image='/images//Avatar woman2.png' name='Sophia Williams' explain='How,s it going😉 ...' date='Mar 30' />
+                            <ChatList image='/images//Avatar woman2.png' name='bob.eth' explain='How,s it going😉 ...' date='Mar 30' />
                         </button>
                     </div>
                 </div>
