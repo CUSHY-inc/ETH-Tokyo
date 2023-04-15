@@ -8,6 +8,7 @@ import Footer from '../../../components/common/Footer';
 import Property from '../../../components/matching/Property';
 import PersonMatch from '@/src/components/matching/PersonMatch';
 import { RootState } from '../../../store';
+import SubmitButton from '@/src/components/common/SubmitButton';
 
 export default function Home() {
 
@@ -23,8 +24,11 @@ export default function Home() {
         <Header />
         <main>
             <div className='flex justify-center mt-8'>
-            <PersonMatch />
+                <PersonMatch />
             </div>
+            <div className='mt-8 flex justify-evenly'>
+              <SubmitButton name='Start Chat' w='w-64' color='btn-primary' />
+          </div>
         </main>
         <footer>
             <div className='mt-16'>

@@ -16,6 +16,8 @@ const PersonMatch = () => {
 
     const image = "/images/forerigner.webp"
 
+    const desc = "Co-founder of Apple Inc., NeXT, and Pixar Animation Studios. Passionate about technology, design, and innovation. Changing the world, one device at a time."
+
     const account = useSelector((state: RootState) => state.account);
     console.log(account);
 
@@ -24,8 +26,14 @@ const PersonMatch = () => {
             <div className="flex flex-col justify-center items-center">
                 <p className="text-2xl">Congratulations!🎉🎉</p>
                 <p className="text-2xl">You matched😍</p>
-                <div className="-z-10">
+                <div className="-z-10 pt-8">
                     <Avatar image={image} ringOffset='ring-offset-0' w='w-24' />
+                </div>
+                <div className="mt-2">
+                    <p>Ryounosuke</p>
+                </div>
+                <div className="mt-4">
+                    <p>{`${desc}`}</p>
                 </div>
             </div>
         </div>
