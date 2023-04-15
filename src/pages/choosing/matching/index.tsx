@@ -1,11 +1,11 @@
 import SubmitButton from '@/src/components/common/SubmitButton';
-import LintReveal from '@/src/components/matching/LintReveal';
+import LitReveal from '@/src/components/matching/LintReveal';
 import PersonMatch from '@/src/components/matching/PersonMatch';
 import Head from 'next/head';
-import { Provider, useSelector } from 'react-redux';
+import { Provider } from 'react-redux';
 import Footer from '../../../components/common/Footer';
 import Header from '../../../components/common/Header';
-import store, { RootState } from '../../../store';
+import store from '../../../store';
 
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
                     <SubmitButton name='Start Chat' w='w-64' color='btn-primary' border='none' />
                 </div>
                 <div className='mt-2 flex justify-evenly'>
-                    <LintReveal name='Reveal info' w='w-64' />
+                    <LitReveal name='Reveal info' w='w-64' />
                 </div>
             </main>
             <footer>

@@ -16,8 +16,8 @@ const Worldcoin = () => {
   const { query } = router
 
   useEffect(() => {
-    // const action = setAccount({ worldcoinToken: ''});
-    // dispatch(action);
+    const action = setAccount({ worldcoinToken: ''});
+    dispatch(action);
     checkConnection();
   }, []);
 

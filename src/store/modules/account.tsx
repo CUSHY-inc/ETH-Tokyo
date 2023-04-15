@@ -5,7 +5,6 @@ export interface Account {
     isConnect: boolean;
     lensToken: string;
     worldcoinToken: string;
-    file: File | null;
     encryptedFile: File | null;
     encryptedSymmetricKey: string | null;
     fileSize: number;
@@ -16,7 +15,6 @@ const initialState: Account = {
     isConnect: false,
     lensToken: '',
     worldcoinToken: '',
-    file: null,
     encryptedFile: null,
     encryptedSymmetricKey: null,
     fileSize: 0,

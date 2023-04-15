@@ -13,7 +13,6 @@ import Title from '../../components/profile/Title';
 import Lit from '../../features/profile/litApi';
 import store, { AppDispatch, RootState } from '../../store';
 import UploadInput from '@/src/components/profile/UploadInput';
-import EncryptButton from '@/src/components/profile/EncryptButton';
 
 
 export default function Profile() {
@@ -47,12 +46,7 @@ export default function Profile() {
         <div className='mt-8 flex justify-center'>
           <Detail />
         </div>
-        <div className='mt-8 flex justify-center'>
-          <UploadInput />
-        </div>
-        <div className='mt-8 flex justify-evenly  fixed bottom-10 w-full'>
-          <EncryptButton name='Save profile' w='w-64' color='btn-primary' />
-        </div>
+        <UploadInput />
       </main>
     </Provider>
   );
