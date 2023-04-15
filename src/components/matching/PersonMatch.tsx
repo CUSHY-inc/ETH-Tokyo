@@ -27,7 +27,7 @@ const PersonMatch = () => {
                 <p className="text-2xl">Congratulations!🎉🎉</p>
                 <p className="text-2xl">You matched😍</p>
                 <div className="-z-10 pt-8">
-                    <Avatar image={image} ringOffset='ring-offset-0' w='w-24' />
+                    <Avatar image={image} ringOffset='ring-offset-0' w='w-24' h='h-24' />
                 </div>
                 <div className="mt-2">
                     <p>Ryounosuke</p>
