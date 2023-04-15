@@ -18,7 +18,6 @@ const Metamask = () => {
   const dispatch = useDispatch<AppDispatch>();
   const account = useSelector((state: RootState) => state.account);
   const nfts = useSelector((state: RootState) => state.nfts);
-
   const options = {
     injectProvider: false,
     communicationLayerPreference: 'webrtc',
@@ -27,18 +26,13 @@ const Metamask = () => {
   const ethereum = MMSDK.getProvider();
 
   const connect = async () => {
-
-    ethereum.request({ method: 'eth_requestAccounts', params: [] });
-
-    // const accounts = await window.ethereum!.request({
-    //   method: "eth_requestAccounts",
-    // });
-    // if (accounts.length > 0) {
-    //   const accountAction = setAccount({addr: accounts[0], isConnect: true});
-    //   dispatch(accountAction);
-    // }
-    // dispatch(fetchNfts({addr: accounts[0], chain: 'Ethereum'}));
-    // router.push('/link');
+    const accounts = ethereum.request({ method: 'eth_requestAccounts', params: [] });
+    if (accounts.length > 0) {
+      const accountAction = setAccount({addr: accounts[0], isConnect: true});
+      dispatch(accountAction);
+    }
+    dispatch(fetchNfts({addr: accounts[0], chain: 'Ethereum'}));
+    router.push('/link');
   }
 
   useEffect(() => {
