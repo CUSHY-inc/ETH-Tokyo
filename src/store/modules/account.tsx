@@ -3,11 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 export interface Account {
     addr: string;
     isConnect: boolean;
+    lensToken: string;
+    worldcoinToken: string;
 }
 
 const initialState: Account = {
     addr: '',
-    isConnect: false
+    isConnect: false,
+    lensToken: '',
+    worldcoinToken: '',
 };
 
 const account = createSlice({
