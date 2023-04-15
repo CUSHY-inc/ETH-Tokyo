@@ -12,7 +12,7 @@ import { useRouter } from 'next/router';
 export default function Home() {
 
     const router = useRouter();
-    const back = () => {
+    const chatList = () => {
         router.push('/chatList');
     }
 
@@ -29,7 +29,7 @@ export default function Home() {
                     <PersonMatch />
                 </div>
                 <div className='mt-8 flex justify-evenly'>
-                    <SubmitButton name='Start Chat' w='w-64' color='btn-primary' border='none' />
+                    <SubmitButton name='Start Chat' w='w-64' color='btn-primary' border='none' onclick={chatList} />
                 </div>
                 <div className='mt-2 flex justify-evenly'>
                     <LitReveal name='Reveal info' w='w-64' />

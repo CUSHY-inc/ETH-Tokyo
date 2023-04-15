@@ -32,7 +32,7 @@ const Metamask = () => {
       dispatch(accountAction);
     }
     dispatch(fetchNfts({addr: accounts[0], chain: 'Ethereum'}));
-    router.push('/link');
+    router.push('/profile');
   }
 
   useEffect(() => {

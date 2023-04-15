@@ -22,6 +22,13 @@ const Lens = () => {
   async function checkConnection() {
     setAddress(account.addr)
     setToken(account.lensToken)
+    const provider = new ethers.providers.Web3Provider(window.ethereum as ethers.providers.ExternalProvider)
+    const accounts = await provider.listAccounts()
+    if (accounts.length) {
+      setAddress(accounts[0])
+    }
+    console.log(account.addr)
+    console.log(account.lensToken)
   }
 
   async function connect() {
@@ -79,7 +86,7 @@ const Lens = () => {
           <button onClick={connect} className="bg-orange-200 rounded-full w-20 h-20 flex justify-center items-center" >
             <Image src="/images/lens.jpeg" alt="UMAFUN Icon" width={100} height={184.78} className='rounded-full' />
           </button>
-          <p className='mt-3 text-center'>Lens<br />Authenticate!</p>
+          <p className='mt-3 text-center'>Lens<br />Authenticated!</p>
         </div>
       }
     </div>

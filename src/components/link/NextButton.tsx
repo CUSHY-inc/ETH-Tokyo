@@ -13,8 +13,6 @@ const NextButton = ({ w = 'w-64', onclick = () => { } }) => {
     && typeof account.lensToken !== 'undefined'
     && typeof account.worldcoinToken !== 'undefined'
     ? 'btn-primary' : 'btn-outline'
-  console.log(account.lensToken)
-  console.log(account.worldcoinToken)
   return (
     <button className={`btn ${w} ${color}`} onClick={onclick}>
       <p>{name}</p>

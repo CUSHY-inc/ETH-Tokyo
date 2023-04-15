@@ -1,5 +1,6 @@
 import { AppDispatch, RootState } from '@/src/store';
 import { setAccount } from '@/src/store/modules/account';
+import { ethers } from 'ethers';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -24,6 +25,11 @@ const Worldcoin = () => {
   async function checkConnection() {
     setAddress(account.addr)
     setToken(account.lensToken)
+    const provider = new ethers.providers.Web3Provider(window.ethereum as ethers.providers.ExternalProvider)
+    const accounts = await provider.listAccounts()
+    if (accounts.length) {
+      setAddress(accounts[0])
+    }
     if (typeof query.id_token !== 'undefined') {
       // 登録
       setToken(query.id_token as string)
@@ -38,10 +44,11 @@ const Worldcoin = () => {
       setAddress(account[0])
     }
   }
-
+  // const url = 'https://0xbagel.com/link'
+  const url = 'http://localhost:3000/link'
   const authenticate = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    router.push('https://id.worldcoin.org/authorize?client_id=app_607869b6679574d3fefdec8ae37fe05c&response_type=id_token&redirect_uri=https%3A%2F%2F0xbagel.com%2Flink');
+    router.push(`https://id.worldcoin.org/authorize?client_id=app_607869b6679574d3fefdec8ae37fe05c&response_type=id_token&redirect_uri=${encodeURIComponent(url)}`);
   };
 
   return (
