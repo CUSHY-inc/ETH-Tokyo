@@ -22,7 +22,7 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <div className='flex flex-col items-center justify-center mt-24'>
+        <div className='flex flex-col items-center justify-center mt-20'>
           <Title title="Let's connect with people" />
           <div className='mt-16'>
             <SubmitButton color='btn-primary' name='Start Huddle01 with them' onclick={postData} />
