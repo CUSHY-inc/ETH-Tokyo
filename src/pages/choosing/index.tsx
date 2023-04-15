@@ -54,7 +54,7 @@ export default function Home() {
                     <div className="absolute z-0 ml-8 mt-24">
                     <TinderCard className="swipe" key="test1" onSwipe={(dir) => swiped(dir, "test1")} onCardLeftScreen={() => outOfFrame("test1")}>
                         <div className="card">
-                        <Person3 evaluate={true} />
+                        <Person4 evaluate={true} />
                         </div>
                     </TinderCard>
                     </div>
@@ -63,7 +63,7 @@ export default function Home() {
                     <div className="absolute z-10 ml-8 mt-24">
                     <TinderCard className="swipe" key="test2" onSwipe={(dir) => swiped(dir, "test2")} onCardLeftScreen={() => outOfFrame("test2")}>
                         <div className="card">
-                        <Person2 evaluate={true} />
+                        <Person3 evaluate={true} />
                         </div>
                     </TinderCard>
                     </div>
@@ -72,7 +72,7 @@ export default function Home() {
                 <div className="absolute z-20 ml-8 mt-24">
                     <TinderCard className="swipe" key="test3" onSwipe={(dir) => swiped(dir, "test3")} onCardLeftScreen={() => outOfFrame("test3")}>
                     <div className="card">
-                        <Person evaluate={true} />
+                        <Person2 evaluate={true} />
                     </div>
                     </TinderCard>
                 </div>

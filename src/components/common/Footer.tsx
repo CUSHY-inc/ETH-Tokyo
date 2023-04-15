@@ -4,7 +4,7 @@ import Avatar from "./Avatar";
 
 const Footer = () => {
 
-    const image = "/images/forerigner.webp"
+    const image = "/images/Avatar woman1.png"
     const router = useRouter();
     const home = () => {
         router.push('/choosing');

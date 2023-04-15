@@ -13,9 +13,9 @@ const PersonMatch = () => {
     const attribute2 = 'Interest';
     const items2 = ['Find Co-founder', 'Sales'];
 
-    const image = "/images/forerigner.webp"
+    const image = "/images/Avatar man1.png"
 
-    const desc = "Co-founder of Apple Inc., NeXT, and Pixar Animation Studios. Passionate about technology, design, and innovation. Changing the world, one device at a time."
+    const desc = "As a strategic thinker with a talent for turning complex challenges into actionable plans, I am confident in my ability to drive growth and deliver results in any business setting."
 
     const account = useSelector((state: RootState) => state.account);
     console.log(account);
@@ -29,7 +29,7 @@ const PersonMatch = () => {
                     <Avatar image={image} ringOffset='ring-offset-0' w='w-24' h='h-24' />
                 </div>
                 <div className="mt-2">
-                    <p>Ryounosuke</p>
+                    <p>Hibiki Sato</p>
                 </div>
                 <div className="mt-4">
                     <p>{`${desc}`}</p>
