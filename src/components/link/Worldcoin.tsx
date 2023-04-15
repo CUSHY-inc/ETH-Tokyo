@@ -41,7 +41,7 @@ const Worldcoin = () => {
 
   const authenticate = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    router.push('https://id.worldcoin.org/authorize?client_id=app_607869b6679574d3fefdec8ae37fe05c&response_type=id_token&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Flink');
+    router.push('https://id.worldcoin.org/authorize?client_id=app_607869b6679574d3fefdec8ae37fe05c&response_type=id_token&redirect_uri=https%3A%2F%2F0xbagel.com%2Flink');
   };
 
   return (
