@@ -14,14 +14,13 @@ import dynamic from "next/dynamic"
 import TinderCard from 'react-tinder-card';
 import Person3 from '@/src/components/matching/Person3';
 import Person4 from '@/src/components/matching/Person4';
-import CardComponent from '@/src/components/matching/CardComponent';
+import Router from 'next/router';
 
 export default function Home() {
 
   const TinderCard = dynamic(() => import('react-tinder-card'), {
     ssr: false
   });
-  // const characters = db
   let countRight = 0;
   let countLeft = 0;
   let count = 0;
@@ -30,20 +29,15 @@ export default function Home() {
   const swiped = (direction: any, nameToDelete: string) => {
     console.log('removing: ' + nameToDelete)
     setLastDirection(direction)
-    // count++;
-    // console.log(count);
   }
   const outOfFrame = (nam: string) => {
     console.log(name + ' left the screen!')
-    // count++;
-    // console.log(count);
+    if (cnt === 1) {
+      Router.push('/choosing/matching');
+    }
     setCnt(cnt+1);
     console.log(cnt);
   }
-
-  // useState(() => {
-  //   console.log("countRight: " + countRight);
-  // }, [count]);
 
   return (
     <Provider store={store}>
@@ -55,28 +49,12 @@ export default function Home() {
       <Header />
       <main>
       <div>
-
-      {/* <div className="relative">
-  <CardComponent cnt={cnt - 3} cardKey={`test1-${cnt}`} onSwipe={(dir) => swiped(dir, "test1")} onCardLeftScreen={() => outOfFrame("test1")} TinderCardComponent={TinderCard}>
-    <Person />
-  </CardComponent>
-  <CardComponent cnt={cnt - 2} cardKey={`test2-${cnt}`} onSwipe={(dir) => swiped(dir, "test2")} onCardLeftScreen={() => outOfFrame("test2")} TinderCardComponent={TinderCard}>
-    <Person />
-  </CardComponent>
-  <CardComponent cnt={cnt - 1} cardKey={`test3-${cnt}`} onSwipe={(dir) => swiped(dir, "test3")} onCardLeftScreen={() => outOfFrame("test3")} TinderCardComponent={TinderCard}>
-    <Person />
-  </CardComponent>
-  <CardComponent cnt={cnt} cardKey={`test4-${cnt}`} onSwipe={(dir) => swiped(dir, "test4")} onCardLeftScreen={() => outOfFrame("test4")} TinderCardComponent={TinderCard}>
-    <Person3 />
-  </CardComponent>
-</div> */}
-
             <div className="relative">
                 {cnt === 3 &&
                     <div className="absolute z-0 ml-8 mt-24">
                     <TinderCard className="swipe" key="test1" onSwipe={(dir) => swiped(dir, "test1")} onCardLeftScreen={() => outOfFrame("test1")}>
                         <div className="card">
-                        <Person evaluate={true} />
+                        <Person3 evaluate={true} />
                         </div>
                     </TinderCard>
                     </div>
@@ -94,7 +72,7 @@ export default function Home() {
                 <div className="absolute z-20 ml-8 mt-24">
                     <TinderCard className="swipe" key="test3" onSwipe={(dir) => swiped(dir, "test3")} onCardLeftScreen={() => outOfFrame("test3")}>
                     <div className="card">
-                        <Person3 evaluate={true} />
+                        <Person evaluate={true} />
                     </div>
                     </TinderCard>
                 </div>
