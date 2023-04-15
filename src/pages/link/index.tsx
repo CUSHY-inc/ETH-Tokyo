@@ -8,10 +8,15 @@ import Footer from '../../components/common/Footer';
 import Header from '../../components/common/Header';
 import Explain from '../../components/link/Explain';
 import { RootState, store } from '../../store';
+import NextButton from '@/src/components/link/NextButton';
+import { useRouter } from 'next/router';
 
 export default function Profile() {
 
-  const account = useSelector((state: RootState) => state.account);
+  const router = useRouter();
+  const next = () => {
+    router.push('/choosing');
+  }
 
   return (
     <Provider store={store}>
@@ -36,7 +41,7 @@ export default function Profile() {
           </div>
         </div>
         <div className='mt-40 flex justify-evenly'>
-          <SubmitButton name='Skip' w='w-64' color='white' border='black' />
+          <NextButton onclick={next} />
         </div>
       </main>
       <footer>

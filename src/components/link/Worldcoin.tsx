@@ -1,6 +1,5 @@
 import { AppDispatch, RootState } from '@/src/store';
 import { setAccount } from '@/src/store/modules/account';
-import { ethers } from 'ethers';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -17,6 +16,8 @@ const Worldcoin = () => {
   const { query } = router
 
   useEffect(() => {
+    // const action = setAccount({ worldcoinToken: ''});
+    // dispatch(action);
     checkConnection();
   }, []);
 
