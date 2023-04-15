@@ -70,7 +70,7 @@ import { Provider, useSelector } from 'react-redux';
   
 //   export default Person;
 
-const Person = () => {
+const Person = ({ evaluate=true }) => {
 
     const attribute1 = 'Career';
     const items1 = ['Community moderator'];
@@ -96,10 +96,13 @@ const Person = () => {
                     <Property attribute={attribute2} items={items2} />
                 </div>
             </div>
+
+            {evaluate &&
             <div className="mt-8 px-4 flex justify-between">
                 <HandThumbDownIcon className="w-8" />
                 <HandThumbUpIcon className="w-8" />
             </div>
+            }
         </div>
     );
 }
