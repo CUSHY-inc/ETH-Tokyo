@@ -26,7 +26,8 @@ const Metamask = () => {
   const ethereum = MMSDK.getProvider();
 
   const connect = async () => {
-    const accounts = ethereum.request({ method: 'eth_requestAccounts', params: [] });
+    const accounts = await ethereum.request({ method: 'eth_requestAccounts', params: [] });
+    console.log(accounts);
     if (accounts.length > 0) {
       const accountAction = setAccount({addr: accounts[0], isConnect: true});
       dispatch(accountAction);
