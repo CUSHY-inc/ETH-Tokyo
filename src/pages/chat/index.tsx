@@ -1,17 +1,29 @@
 import SubmitButton from '@/src/components/common/SubmitButton';
-import ImageButton from '@/src/components/profile/ImageButton';
-import TextInput from '@/src/components/profile/TextInput';
 import Head from 'next/head';
 import { Provider } from 'react-redux';
+import Chatmate from '../../components/chat/Chatmate';
 import Footer from '../../components/common/Footer';
 import Header from '../../components/common/Header';
-import Explain from '../../components/link/Explain';
 import store from '../../store';
-import Lens from '@/src/components/link/Lens';
-import Worldcoin from '@/src/components/link/Worldcoin';
 
-export default function Profile() {
-
+export default function Chat() {
+  const postData = async () => {
+    const response = await fetch('https://iriko.testing.huddle01.com/api/v1/create-iframe-room', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': 'VwTZ4AGTxme9snANex9tep3NwvVMGfYd'
+      },
+      body: JSON.stringify({ title: 'NetworX' })
+    });
+    if (response.ok) {
+      const responseData = await response.json();
+      console.log(responseData.data.meetingLink);
+      window.open(responseData.data.meetingLink, '_blank')
+    } else {
+      console.error('Failed to fetch data')
+    }
+  }
   return (
     <Provider store={store}>
       <Head>
@@ -24,18 +36,12 @@ export default function Profile() {
       </header>
       <main>
         <div className='mt-8 flex justify-center items-center'>
-          <Explain />
-        </div>
-        <div className='mt-16 flex justify-evenly'>
-          <div className="w-fit">
-            <Worldcoin />
-          </div>
-          <div className="w-fit">
-            <Lens />
-          </div>
+          <Chatmate />
         </div>
         <div className='mt-40 flex justify-evenly'>
-          <SubmitButton name='Skip' w='w-64' color='white' border='black'/>
+          <SubmitButton name='Start Huddle' w='w-64' color='blue' border='none' onclick={
+            postData
+          } />
         </div>
       </main>
       <footer>
