@@ -10,6 +10,8 @@ import MetaMaskSDK from '@metamask/sdk';
 import ImageButton from '@/src/components/profile/ImageButton';
 import TextInput from '@/src/components/profile/TextInput';
 import SubmitButton from '@/src/components/common/SubmitButton';
+import Detail from '@/src/components/profile/Detail';
+import UploadInput from '@/src/components/profile/UploadInput';
 
 export default function Profile() {
 
@@ -27,19 +29,25 @@ export default function Profile() {
           <div className='mt-8 flex justify-center items-center'>
             <Title />
           </div>
-          <div className='mt-8 flex justify-evenly'>
+          <div className='mt-8 flex justify-center'>
             <div className="w-fit">
               <ImageButton />
             </div>
           </div>
-          <div className='mt-8 flex justify-evenly'>
+          <div className='mt-8 flex justify-center'>
               <TextInput />
           </div>
-          <div className='mt-8 flex justify-evenly'>
+          <div className='mt-8 flex justify-center'>
               <TextInput h='h-48' placeholder='Write your profile here' />
           </div>
-          <div className='mt-16 flex justify-evenly'>
-              <SubmitButton name='Save profile' w='w-64'  />
+          <div className='mt-8 flex justify-center'>
+            <Detail />
+          </div>
+          <div className='mt-8 flex justify-center'>
+              <UploadInput placeholder='Upload your resume' />
+          </div>
+          <div className='mt-8 flex justify-evenly'>
+              <SubmitButton name='Save profile' w='w-64' color='btn-primary' />
           </div>
         </main>
         <footer>

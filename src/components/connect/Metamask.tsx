@@ -30,7 +30,8 @@ const Metamask = () => {
   useEffect(() => {
     console.log(account);
     if (account.isConnect) {
-      router.push('/matching');
+      // localStorage.setItem("account", JSON.stringify(account));
+      router.push('/choosing');
     }
   }, [account]);
 
