@@ -28,7 +28,10 @@ const Describe = () => {
                     </div>
                     <div className="mt-4">
                         <div className='flex flex-col items-center w-fit'>
-                            <p className="text-1xl font-semibold">winny-jack07</p>
+                            <p className="text-1xl font-semibold flex">
+                                Ryounosuke Takeuchi
+                                <img src="/images/worldcoin.jpg" alt="UMAFUN Icon" className='w-6 border border-black ml-2 rounded-full' />
+                            </p>
                         </div>
                     </div>
                     <div className="mt-4">

@@ -5,6 +5,9 @@ export interface Account {
     isConnect: boolean;
     lensToken: string;
     worldcoinToken: string;
+    encryptedFile: File | null;
+    encryptedSymmetricKey: string | null;
+    fileSize: number;
 }
 
 const initialState: Account = {
@@ -12,6 +15,9 @@ const initialState: Account = {
     isConnect: false,
     lensToken: '',
     worldcoinToken: '',
+    encryptedFile: null,
+    encryptedSymmetricKey: null,
+    fileSize: 0,
 };
 
 const account = createSlice({

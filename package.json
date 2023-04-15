@@ -12,6 +12,8 @@
   "dependencies": {
     "@apollo/client": "^3.7.12",
     "@heroicons/react": "^2.0.17",
+    "@lit-protocol/lit-node-client": "^2.1.123",
+    "@lit-protocol/sdk-browser": "^1.1.250",
     "@metamask/sdk": "^0.1.0",
     "@rainbow-me/rainbowkit": "^0.12.4",
     "@react-spring/web": "^9.7.2",

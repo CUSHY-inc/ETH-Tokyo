@@ -1,43 +1,45 @@
-import Head from 'next/head';
-import Header from '../../../components/common/Header'
-import Title from '../../../components/matching/Title';
-import { Provider, useSelector } from 'react-redux';
-import store from '../../../store';
-import Describe from '../../../components/matching/Describe';
-import Footer from '../../../components/common/Footer';
-import Property from '../../../components/matching/Property';
-import PersonMatch from '@/src/components/matching/PersonMatch';
-import { RootState } from '../../../store';
 import SubmitButton from '@/src/components/common/SubmitButton';
-import Router from 'next/router';
+import LitReveal from '@/src/components/matching/LintReveal';
+import PersonMatch from '@/src/components/matching/PersonMatch';
+import Head from 'next/head';
+import { Provider } from 'react-redux';
+import Footer from '../../../components/common/Footer';
+import Header from '../../../components/common/Header';
+import store from '../../../store';
+import { useRouter } from 'next/router';
+
 
 export default function Home() {
 
-    const clickHandler = () => {
-        Router.push('/chatList');
+    const router = useRouter();
+    const back = () => {
+        router.push('/chatList');
     }
 
     return (
         <Provider store={store}>
-        <Head>
-            <title>ETH-Tokyo</title>
-            <meta name="description" content="ETH-Tokyo" />
-            <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Header />
-        <main>
-            <div className='flex justify-center mt-24'>
-                <PersonMatch />
-            </div>
-            <div className='mt-8 flex justify-evenly'>
-              <SubmitButton onclick={clickHandler} name='Start Chat' w='w-64' color='btn-primary' />
-          </div>
-        </main>
-        <footer>
-            <div className='mt-16'>
-            <Footer />
-            </div>
-        </footer>
+            <Head>
+                <title>ETH-Tokyo</title>
+                <meta name="description" content="ETH-Tokyo" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <Header />
+            <main>
+                <div className='flex justify-center mt-24'>
+                    <PersonMatch />
+                </div>
+                <div className='mt-8 flex justify-evenly'>
+                    <SubmitButton name='Start Chat' w='w-64' color='btn-primary' border='none' />
+                </div>
+                <div className='mt-2 flex justify-evenly'>
+                    <LitReveal name='Reveal info' w='w-64' />
+                </div>
+            </main>
+            <footer>
+                <div className='mt-16'>
+                    <Footer />
+                </div>
+            </footer>
         </Provider>
     );
 

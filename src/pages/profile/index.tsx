@@ -1,60 +1,53 @@
-import Head from 'next/head';
-import Header from '../../components/common/Header'
-import Metamask from '../../components/connect/Metamask';
-import Email from '../../components/connect/Email';
-import Title from '../../components/profile/Title';
-import { Provider } from 'react-redux';
-import store from '../../store';
-import Footer from '../../components/common/Footer';
-import MetaMaskSDK from '@metamask/sdk';
-import ImageButton from '@/src/components/profile/ImageButton';
-import TextInput from '@/src/components/profile/TextInput';
 import SubmitButton from '@/src/components/common/SubmitButton';
 import Detail from '@/src/components/profile/Detail';
-import UploadInput from '@/src/components/profile/UploadInput';
+import ImageButton from '@/src/components/profile/ImageButton';
+import TextInput from '@/src/components/profile/TextInput';
+import { setAccount } from '@/src/store/modules/account';
+import { ArrowUpTrayIcon } from '@heroicons/react/24/solid';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { ChangeEvent, useState } from 'react';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import Header from '../../components/common/Header';
+import Title from '../../components/profile/Title';
+import Lit from '../../features/profile/litApi';
+import store, { AppDispatch, RootState } from '../../store';
+import UploadInput from '@/src/components/profile/UploadInput';
+
 
 export default function Profile() {
-  const router = useRouter();
-    const next = () => {
-        router.push('/link');
-    }
 
-    return (
-      <Provider store={store}>
-        <Head>
-          <title>ETH-Tokyo</title>
-          <meta name="description" content="ETH-Tokyo" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <header>
-          <Header enable={false} />
-        </header>
-        <main>
-          <div className='mt-24 flex justify-center items-center'>
-            <Title />
+  return (
+    <Provider store={store}>
+      <Head>
+        <title>ETH-Tokyo</title>
+        <meta name="description" content="ETH-Tokyo" />
+        <meta name="color-shceme" content="light" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <header>
+        <Header enable={false} />
+      </header>
+      <main>
+        <div className='mt-24 flex justify-center items-center'>
+          <Title />
+        </div>
+        <div className='mt-8 flex justify-center'>
+          <div className="w-fit">
+            <ImageButton />
           </div>
-          <div className='mt-8 flex justify-center'>
-            <div className="w-fit">
-              <ImageButton />
-            </div>
-          </div>
-          <div className='mt-8 flex justify-center'>
-              <TextInput />
-          </div>
-          <div className='mt-8 flex justify-center'>
-              <TextInput h='h-48' placeholder='Write your profile here' />
-          </div>
-          <div className='mt-8 flex justify-center'>
-            <Detail />
-          </div>
-          <div className='mt-8 flex justify-center'>
-              <UploadInput placeholder='Upload your resume' />
-          </div>
-          <div className='mt-8 flex justify-evenly  fixed bottom-10 w-full'>
-              <SubmitButton name='Save profile' w='w-64' color='btn-primary' onclick={next}/>
-          </div>
-        </main>
-      </Provider>
-    );
-  }
+        </div>
+        <div className='mt-8 flex justify-center'>
+          <TextInput />
+        </div>
+        <div className='mt-8 flex justify-center'>
+          <TextInput h='h-48' placeholder='Write your profile here' />
+        </div>
+        <div className='mt-8 flex justify-center'>
+          <Detail />
+        </div>
+        <UploadInput />
+      </main>
+    </Provider>
+  );
+}
