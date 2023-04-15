@@ -14,13 +14,23 @@ const Worldcoin = () => {
   const dispatch = useDispatch<AppDispatch>();
   const account = useSelector((state: RootState) => state.account);
   const router = useRouter();
-  const { query } = router
 
   useEffect(() => {
     const action = setAccount({ worldcoinToken: ''});
     dispatch(action);
     checkConnection();
   }, []);
+
+  useEffect(() => {
+    if (router.isReady) {
+      const id_token = router.query.id_token
+      console.log(id_token)
+      // 登録
+      setToken(id_token as string)
+      const action = setAccount({ ...account, worldcoinToken: id_token });
+      dispatch(action);
+    }
+  }, [router])
 
   async function checkConnection() {
     setAddress(account.addr)
@@ -29,12 +39,6 @@ const Worldcoin = () => {
     const accounts = await provider.listAccounts()
     if (accounts.length) {
       setAddress(accounts[0])
-    }
-    if (typeof query.id_token !== 'undefined') {
-      // 登録
-      setToken(query.id_token as string)
-      const action = setAccount({ ...account, worldcoinToken: query.id_token });
-      dispatch(action);
     }
   }
 
@@ -48,7 +52,8 @@ const Worldcoin = () => {
   const url = 'http://localhost:3000/link'
   const authenticate = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    router.push(`https://id.worldcoin.org/authorize?client_id=app_607869b6679574d3fefdec8ae37fe05c&response_type=id_token&redirect_uri=${encodeURIComponent(url)}`);
+    const uri = `https://id.worldcoin.org/authorize?client_id=app_607869b6679574d3fefdec8ae37fe05c&response_type=id_token&redirect_uri=${encodeURIComponent(url)}`
+    window.open(uri);
   };
 
   return (
