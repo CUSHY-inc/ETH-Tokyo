@@ -28,9 +28,6 @@ export default function Home() {
           <div className="w-fit">
             <Metamask />
           </div>
-          <div className="w-fit">
-            <Email />
-          </div>
         </div>
       </main>
       <footer>
