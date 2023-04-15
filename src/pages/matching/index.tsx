@@ -21,9 +21,9 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <div className='mt-8 flex justify-center items-center'>
+        {/* <div className='mt-8 flex justify-center items-center'>
           <Title />
-        </div>
+        </div> */}
         <div className='pt-8'>
           <Describe />
         </div>
