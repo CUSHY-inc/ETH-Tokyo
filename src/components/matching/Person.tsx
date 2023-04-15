@@ -3,6 +3,8 @@ import Property from "./Property";
 import { HandThumbUpIcon, HandThumbDownIcon } from "@heroicons/react/24/solid";
 import React, { useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
+import { RootState } from '../../store';
+import { Provider, useSelector } from 'react-redux';
 
 // const Person = () => {
 //     const [currentProfile, setCurrentProfile] = useState(0);
@@ -74,6 +76,12 @@ const Person = () => {
     const items1 = ['Community moderator'];
     const attribute2 = 'Interest';
     const items2 = ['Find Co-founder', 'Sales'];
+
+    const account = useSelector((state: RootState) => state.account);
+
+    useEffect(() => {
+      console.log(account);
+    }, [])
 
     return (
         <div>

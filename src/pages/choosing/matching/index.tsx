@@ -12,8 +12,6 @@ import SubmitButton from '@/src/components/common/SubmitButton';
 
 export default function Home() {
 
-
-
     return (
         <Provider store={store}>
         <Head>
