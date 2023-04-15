@@ -20,11 +20,6 @@ const Lens = () => {
   }, [])
 
   async function checkConnection() {
-    const provider = new ethers.providers.Web3Provider(window.ethereum as ethers.providers.ExternalProvider)
-    const accounts = await provider.listAccounts()
-    if (accounts.length) {
-      setAddress(accounts[0])
-    }
     setAddress(account.addr)
     setToken(account.lensToken)
   }
@@ -54,7 +49,7 @@ const Lens = () => {
       const { data: { authenticate: { accessToken } } } = authData
       // 登録
       setToken(accessToken)
-      const action = setAccount({ lensToken: accessToken });
+      const action = setAccount({ ...account, lensToken: accessToken });
       dispatch(action);
     } catch (err) {
       console.log('Error signing in: ', err)
@@ -76,7 +71,7 @@ const Lens = () => {
           <button onClick={login} className="bg-orange-200 rounded-full w-20 h-20 flex justify-center items-center" >
             <Image src="/images/lens.jpeg" alt="UMAFUN Icon" width={100} height={184.78} className='rounded-full' />
           </button>
-          <p className='mt-3 text-center'>Lens<br />Connected!<br />- Login</p>
+          <p className='mt-3 text-center'>Lens<br />- Authenticate</p>
         </div>
       }
       {
@@ -84,7 +79,7 @@ const Lens = () => {
           <button onClick={connect} className="bg-orange-200 rounded-full w-20 h-20 flex justify-center items-center" >
             <Image src="/images/lens.jpeg" alt="UMAFUN Icon" width={100} height={184.78} className='rounded-full' />
           </button>
-          <p className='mt-3 text-center'>Lens<br />Connected!<br />Logged in!</p>
+          <p className='mt-3 text-center'>Lens<br />Authenticate!</p>
         </div>
       }
     </div>
