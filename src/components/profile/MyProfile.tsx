@@ -25,8 +25,10 @@ const MyProfile = () => {
         <div className="border border-gray-300 rounded-xl p-8 w-80 bg-white">
             <Describe />
             <div className="mt-8 flex flex-wrap justify-center">
-                {nfts[0] && nfts[0].image && <img src={nfts[0].image} alt="" width="50" height="50" className="rounded-full mr-4 mb-0" />}
-                {nfts[1] && nfts[1].image && <img src={nfts[1].image} alt="" width="50" height="50" className="rounded-full mr-4 mb-0" />}
+                {/* {nfts[0] && nfts[0].image && <img src={nfts[0].image} alt="" width="50" height="50" className="rounded-full mr-4 mb-0" />}
+                {nfts[1] && nfts[1].image && <img src={nfts[1].image} alt="" width="50" height="50" className="rounded-full mr-4 mb-0" />} */}
+                <img src="https://quicknode.mypinata.cloud/ipfs/QmaLgJxwjW5ynipsDn3744Fj1bwNmFJSjuAX3aJVprY1K3/0.png" alt="" width="50" height="50" className="rounded-full mr-4 mb-0" />
+                <img src="https://quicknode.mypinata.cloud/ipfs/QmaLgJxwjW5ynipsDn3744Fj1bwNmFJSjuAX3aJVprY1K3/0.png" alt="" width="50" height="50" className="rounded-full mr-4 mb-0" />
             </div>
         </div>
         </div>
