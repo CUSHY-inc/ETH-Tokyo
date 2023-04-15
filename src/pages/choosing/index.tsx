@@ -6,11 +6,9 @@ import store from '../../store';
 import Describe from '../../components/matching/Describe';
 import Footer from '../../components/common/Footer';
 import Property from '../../components/matching/Property';
+import Person from '@/src/components/matching/Person';
 
 export default function Home() {
-
-  const attribute = 'Career'
-  const items = ['Community moderator'];
 
   return (
     <Provider store={store}>
@@ -21,14 +19,8 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        {/* <div className='mt-8 flex justify-center items-center'>
-          <Title />
-        </div> */}
-        <div className='pt-8'>
-          <Describe />
-        </div>
-        <div className='mt-3 ml-8'>
-          <Property attribute={attribute} items={items} />
+        <div className='flex justify-center mt-8'>
+          <Person />
         </div>
       </main>
       <footer>
